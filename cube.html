@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background: #333;
+        }
+
+        .scene {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .scene ul {
+            padding: 0;
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 150px;
+            transform-style: preserve-3d;
+            transition: all 3s;
+        }
+
+        .scene ul li {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 3s;
+        }
+
+        .scene:hover .left {
+            box-shadow: 0 0 15px 10px #fff;
+            background: red;
+            transform: translateX(-100px) rotateY(90deg);
+        }
+
+        .scene:hover .right {
+            box-shadow: 0 0 15px 10px #fff;
+            background: blue;
+            transform: translateX(100px) rotateY(90deg);
+        }
+
+        .scene:hover .top {
+            box-shadow: 0 0 15px 10px #fff;
+            background: yellow;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+
+        .scene:hover .bottom {
+            box-shadow: 0 0 15px 10px #fff;
+            background: #6e91ff;
+            transform: translateY(100px) rotateX(90deg);
+        }
+
+        .scene:hover .front {
+            box-shadow: 0 0 15px 10px #fff;
+            background: #1cff9e;
+            transform: translateZ(100px);
+        }
+
+        .scene:hover .behind {
+            box-shadow: 0 0 15px 10px #fff;
+            background: #ff005f;
+            transform: translateZ(-100px);
+        }
+
+        .scene:hover ul {
+            transform: rotate3d(1, 1, 0, 360deg);
+        }
+    </style>
+</head>
+<body>
+<div class="scene">
+    <ul>
+        <li class="front"></li>
+        <li class="left"></li>
+        <li class="right"></li>
+        <li class="behind"></li>
+        <li class="top"></li>
+        <li class="bottom"></li>
+    </ul>
+</div>
+</body>
+</html>
